@@ -1,0 +1,17 @@
+1. 姓名: 谷品儒
+2. 學號: 407410042
+3. e-mail: desire2033@gmail.com
+4. 測試環境(哪一台工作站): Tux
+5. 完成的作業項目 (一一列出，並說明如何操作)
+    (1) PartA: class Line, Line.h, Line.cpp 完成
+               class Line2, Line2.h, Line2.cpp 完成
+               class Circle, Circle.h, Circle.cpp 完成
+               class Circle2, Circle2.h, Circle2.cpp 完成
+            由於簡報中並未規範 PartA 中哪些函式須寫在.cpp檔，因此constructor皆實作在.h檔內。
+    (2) PartB: class List, List.h, List.cpp 完成
+    (3) PartC: class LnList, LnList.h, LnList.cpp 完成
+    (4) Makefile 完成，可完整編譯上列全程式。通過助教提供的 main.cpp 測試。
+    (5) 含README，共繳交14個檔案。
+Bouns內容(助教會依Bonus內容酌量給分)
+Reference
+其他想補充告知助教的事項也可以在此說明
