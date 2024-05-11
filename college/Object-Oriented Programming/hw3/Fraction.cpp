@@ -32,8 +32,46 @@ void Fraction::simplify() {
 // function doesn't do simplify
 ostream& operator << (ostream &os, const Fraction &frac) {
     int a = frac.getNumerator();
-    int b = frac.getNumerator();
+    int b = frac.getDenominator();
 
-    os << a << "/" << b << endl;
+    os << a << "/" << b;
     return os;
+}
+
+// compute least common multiple(lcm) of two denom and multiple it to both num and denom
+// plus and simplify them
+Fraction Fraction::operator + (Fraction &other) {
+    int plus_denom = lcm(this->denom, other.denom);
+    int plus_num = (plus_denom / this->denom * this->num) + (plus_denom / other.denom * other.num);
+    Fraction frac_plus(plus_num, plus_denom);
+    frac_plus.simplify();
+    return frac_plus;
+}
+
+// same with plus
+Fraction Fraction::operator - (Fraction &other) {
+    int minus_denom = lcm(this->denom, other.denom);
+    int minus_num = (minus_denom / this->denom * this->num) - (minus_denom / other.denom * other.num);
+    Fraction frac_minus(minus_num, minus_denom);
+    frac_minus.simplify();
+    return frac_minus;
+}
+
+// multiple two fraction and simplify
+Fraction Fraction::operator * (Fraction &other) {
+    Fraction frac_multi(this->num * other.num, this->denom * other.denom);
+    frac_multi.simplify();
+    return frac_multi;
+}
+
+// devide by this fraction multi reciprocal other fraction
+Fraction Fraction::operator / (Fraction &other) {
+    Fraction frac_devide(this->num * other.denom, this->denom * other.num);
+    frac_devide.simplify();
+    return frac_devide;
+}
+
+// different with binary case, unary to compute negative value
+Fraction Fraction::operator - () {
+    return Fraction(-num, denom);
 }
