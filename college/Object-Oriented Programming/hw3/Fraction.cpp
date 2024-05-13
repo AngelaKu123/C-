@@ -75,3 +75,69 @@ Fraction Fraction::operator / (Fraction &other) {
 Fraction Fraction::operator - () {
     return Fraction(-num, denom);
 }
+
+// same with operater + yet doesn't create new Fraction object
+Fraction& Fraction::operator += (Fraction &other) {
+    int plus_denom = lcm(this->denom, other.denom);
+    int plus_num = (plus_denom / this->denom * this->num) + (plus_denom / other.denom * other.num);
+    this->denom = plus_denom;
+    this->num = plus_num;
+    this->simplify();
+    return *this;
+}
+
+// same with operator - yet doesn't create new Fraction object
+Fraction& Fraction::operator -= (Fraction &other) {
+    int minus_denom = lcm(this->denom, other.denom);
+    int minus_num = (minus_denom / this->denom * this->num) - (minus_denom / other.denom * other.num);
+    this->denom = minus_denom;
+    this->num = minus_num;
+    this->simplify();
+    return *this;
+}
+
+// same with operator * yet doesn't create new Fraction object
+Fraction& Fraction::operator *= (Fraction &other) {
+    this->num *= other.num;
+    this->denom *= other.denom;
+    this->simplify();
+    return *this;
+}
+
+// same with operator / yet doesn't create new Fraction object
+Fraction& Fraction::operator /= (Fraction &other) {
+    this->num *= other.denom;
+    this->denom *= other.num;
+    this->simplify();
+    return *this;
+}
+
+// prefix ++
+Fraction& Fraction::operator ++ () {
+    this->num += this->denom;
+    this->simplify();
+    return *this;
+}
+
+// postfix ++
+Fraction Fraction::operator ++ (int) {
+    Fraction temp(this->num, this->denom);
+    this->num += this->denom;
+    this->simplify();
+    return temp;
+}
+
+// prefix --
+Fraction& Fraction::operator -- () {
+    this->num -= this->denom;
+    this->simplify();
+    return *this;
+}
+
+// postfix --
+Fraction Fraction::operator -- (int) {
+    Fraction temp(this->num, this->denom);
+    this->num -= this->denom;
+    this->simplify();
+    return temp;
+}

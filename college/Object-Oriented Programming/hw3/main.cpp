@@ -27,6 +27,29 @@ int main() {
     cout << "   4. Operator / : 2/3 / 5/6 = " << frac_5 / frac_6 << endl;
     cout << "   5. Operator - , unary case: -(2/3) = " << -frac_5 << endl;
 
+    cout << "Operator overloading - Assignment" << endl;
+    cout << "   1. Operator += : 2/3 += 5/6 -> " << &(frac_5 += frac_6) << endl;
+    Fraction frac_7(2, 3), frac_8(1, 4);
+    cout << "   2. Operator -= : 2/3 -= 1/4 -> " << &(frac_7 -= frac_8) << endl;
+    Fraction frac_9(2, 3), frac_10(1, 2);
+    cout << "   3. Operator *= : 2/3 *= 1/2 -> " << &(frac_9 *= frac_10) << endl;
+    Fraction frac_11(2, 3);
+    cout << "   4. Operator /= : 2/3 /= 5/6 -> " << &(frac_11 /= frac_10) << endl;
+
+    cout << "Operator overloading - Increment, Decrement" << endl;
+    Fraction frac_12, frac_13(2, 3);
+    frac_12 = ++frac_13;
+    cout << "   1. Operator prefix ++ : a(), b(2, 3) -> a = ++b -> a( " << frac_12 << " ) b( " << frac_13 << " )" << endl;
+    Fraction frac_14, frac_15(2, 3);
+    frac_14 = frac_15++;
+    cout << "   2. Operator postfix ++ : a(), b(2, 3) -> a = b++ -> a( " << frac_14 << " ) b( " << frac_15 << " )" << endl;
+    Fraction frac_16, frac_17(4, 3);
+    frac_16 = --frac_17;
+    cout << "   3. Operator prefix -- : a(), b(4, 3) -> a = --b -> a( " << frac_16 << " ) b( " << frac_17 << " )" << endl;
+    Fraction frac_18, frac_19(4, 3);
+    frac_18 = frac_19--;
+    cout << "   4. Operator postfix -- : a(), b(4, 3) -> a = b-- -> a( " << frac_18 << " ) b( " << frac_19 << " )" << endl;
+    
     
     return 0;
 }

@@ -25,5 +25,19 @@ public:
     Fraction operator * (Fraction &other);
     Fraction operator / (Fraction &other);
     Fraction operator - ();
+
+    Fraction& operator += (Fraction &other);
+    Fraction& operator -= (Fraction &other);
+    Fraction& operator *= (Fraction &other);
+    Fraction& operator /= (Fraction &other);
+
+    // prefix ++
+    Fraction& operator ++ ();
+    // postfix ++
+    Fraction operator ++ (int);
+    // prefix --
+    Fraction& operator -- ();
+    // postfix --
+    Fraction operator -- (int);
 };
 #endif
