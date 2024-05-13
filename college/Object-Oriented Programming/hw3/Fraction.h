@@ -39,5 +39,12 @@ public:
     Fraction& operator -- ();
     // postfix --
     Fraction operator -- (int);
+
+    bool operator == (Fraction &other);
+    bool operator != (Fraction &other);
+    bool operator > (Fraction &other);
+    bool operator >= (Fraction &other);
+    bool operator < (Fraction &other);
+    bool operator <= (Fraction &other);
 };
 #endif

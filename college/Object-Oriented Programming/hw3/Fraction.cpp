@@ -141,3 +141,36 @@ Fraction Fraction::operator -- (int) {
     this->simplify();
     return temp;
 }
+
+// true if two fractions are equality
+bool Fraction::operator == (Fraction &other) {
+    this->simplify();
+    other.simplify();
+    if (this->num == other.num && this->denom == other.denom)
+        return true;
+    return false; // else
+}
+
+// true if two fraction are NOT equality
+bool Fraction::operator != (Fraction &other) {
+    this->simplify();
+    other.simplify();
+    return (this->num != other.num || this->denom != other.denom);
+}
+
+// true if the left fraction is bigger than the right one
+bool Fraction::operator > (Fraction &other) {
+    return (this->decimalValue() > other.decimalValue());
+}
+
+bool Fraction::operator >= (Fraction &other) {
+    return (this->decimalValue() >= other.decimalValue());
+}
+
+bool Fraction::operator < (Fraction &other) {
+    return (this->decimalValue() < other.decimalValue());
+}
+
+bool Fraction::operator <= (Fraction &other) {
+    return (this->decimalValue() <= other.decimalValue());
+}
