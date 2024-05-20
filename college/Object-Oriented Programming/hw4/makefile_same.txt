@@ -1,0 +1,14 @@
+CXX = g++
+CXXFLAGS = -std=c++17 -Wall
+
+OBJS = MyShape.o main.o
+TARGET = MyShape.out
+
+$(TARGET): $(OBJS)
+	$(CXX) $(OBJS) -o $(TARGET)
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $<
+
+clean:
+	rm -f $(OBJS) $(TARGET)
