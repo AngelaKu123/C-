@@ -1,8 +1,5 @@
-1. 姓名: 谷品儒
-2. 學號: 407410042
-3. email: desire2033@gmail.com
-4. 測試環境: tux
-5. 完成項目
+測試環境: tux
+完成項目
     (1) class MyShape
     (2) class Rectangle derived from class MyShape
     (3) class Circle derived from class MyShape
@@ -10,12 +7,12 @@
     (5) main program
     (6) makefile，可用指令 make、make clean
     (7) 執行檔案請輸入 `./MyShape.out`
-6. Bonus
+Bonus
     (1) 基本輸出排版
     (2) Traverse 時會顯示 length & width or diameter
     (3) Traverse 時會顯示 shape 周長
-7. Reference: chatgpt
-8. 終端輸出範例
+Reference: chatgpt
+終端輸出範例
 //
 Input type for shape; 1 for rectangle, 2 for circle.
 -> Shape 1 type: 2
