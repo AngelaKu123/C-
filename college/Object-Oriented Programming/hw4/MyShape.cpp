@@ -17,8 +17,16 @@ Rectangle::Rectangle(int l, int w): MyShape(1), length(l), width(w) {
     cout << "A rectangle based on class `Rectangle` is created succesfully." << endl;
 }
 
+void Rectangle::shapeElement() const {
+    cout << "length = " << length << ", width = " << width << endl;
+}
+
 double Rectangle::findArea() const {
     return static_cast<double>(length * width);
+}
+
+double Rectangle::findCircumference() const {
+    return static_cast<double>(length + width) * 2;
 }
 
 void Rectangle::showShape() const {
@@ -33,9 +41,17 @@ Circle::Circle(int d): MyShape(2), Diameter(d) {
     cout << "A circle based on class `Circle` is created succesfully." << endl;
 }
 
+void Circle::shapeElement() const {
+    cout << "diameter = " << Diameter << endl;
+}
+
 double Circle::findArea() const {
     double radius = static_cast<double>(Diameter) / 2;
-    return  radius * radius * M_PI;
+    return radius * radius * M_PI;
+}
+
+double Circle::findCircumference() const {
+    return Diameter * M_PI;
 }
 
 void Circle::showShape() const {

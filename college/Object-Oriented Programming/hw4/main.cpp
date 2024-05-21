@@ -2,8 +2,8 @@
 
 int main() {
     int type = 0;
-    cout << "Input type for shape; 1 for rectangle, 2 for circle." << endl;
     // Input
+    cout << "Input type for shape; 1 for rectangle, 2 for circle." << endl;
     MyShape* theArray[5] = { nullptr };
     for (int i = 0; i < 5; i++) {
         cout << "-> Shape " << i + 1 << " type: ";
@@ -27,21 +27,26 @@ int main() {
             default: {
                 cout << "Input error; please enter type 1 or 2." << endl;
                 break;
-            }
+            } 
         }
+        cout << endl;
     }
     cout << "============================================" << endl;
+
     // Traverse
     for (int i = 0; i < 5; i++) {
         if (theArray[i] == NULL) {
-            cout << "Shape " << i + 1 << " doesn't exist." << endl;
+            cout << "Shape " << i + 1 << " doesn't exist." << endl << endl;
             continue;
         }
         cout << "Shape " << i + 1 << ": ";
         theArray[i]->showShape();
+        theArray[i]->shapeElement();
         cout << "The area of shape is " << theArray[i]->findArea() << endl;
+        cout << "The circumference of shape is " << theArray[i]->findCircumference() << endl << endl;
     }
-    cout << "======================================" << endl;
+    cout << "============================================" << endl;
+
     // Free
     for (int i = 0; i < 5; i++) {
         cout << "Free shape " << i + 1 << ":" << endl;
@@ -49,7 +54,7 @@ int main() {
             cout << "Shape doesn't exist." << endl;
         delete theArray[i];
         theArray[i] = nullptr;
+        cout << endl;
     }
-
     return 0;
 }
